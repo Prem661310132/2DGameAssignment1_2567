@@ -117,11 +117,13 @@ public class PlayerControl : MonoBehaviour
         {
             rb.velocity = Vector2.up * jumpforce;
             extraJumps--;
+            anim.SetTrigger("Jumping");
         }
         else if (Input.GetKeyDown(KeyCode.Space) && extraJumps == 0 && isGrounded == true)
 
         {
             rb.velocity = Vector2.up * jumpforce;
+            anim.SetTrigger("Jumping");
         }
 
 
