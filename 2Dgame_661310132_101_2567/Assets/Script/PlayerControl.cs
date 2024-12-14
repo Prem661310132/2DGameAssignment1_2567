@@ -27,6 +27,8 @@ public class PlayerControl : MonoBehaviour
     public LayerMask whatIsGround;
     public LayerMask whatIsLadder;
     private Animator anim;
+    public GameObject jumpEffect;
+    public GameObject LandEffect;
 
     private int extraJumps;
     public int extraJumpsValue;
@@ -102,6 +104,7 @@ public class PlayerControl : MonoBehaviour
         if (isGrounded && !wasGrounded)
         {
             anim.SetTrigger("Landing");
+            Instantiate(LandEffect, groundCheck.position, Quaternion.identity);
         }
 
         wasGrounded = isGrounded;
@@ -117,6 +120,7 @@ public class PlayerControl : MonoBehaviour
         {
             rb.velocity = Vector2.up * jumpforce;
             extraJumps--;
+            Instantiate(jumpEffect, groundCheck.position, Quaternion.identity);
             anim.SetTrigger("Jumping");
         }
         else if (Input.GetKeyDown(KeyCode.Space) && extraJumps == 0 && isGrounded == true)

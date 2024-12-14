@@ -1062,6 +1062,8 @@ MonoBehaviour:
   whatIsLadder:
     serializedVersion: 2
     m_Bits: 512
+  jumpEffect: {fileID: 141433446842962269, guid: 8f0303548f7e730498f7921fef166bf5, type: 3}
+  LandEffect: {fileID: 3432958286849152088, guid: 875b6924b9ec358488ebca58340174ad, type: 3}
   extraJumpsValue: 1
   jumpTimeCounter: 0.2
 --- !u!50 &1336163413
