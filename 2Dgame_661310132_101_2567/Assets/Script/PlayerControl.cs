@@ -27,6 +27,8 @@ public class PlayerControl : MonoBehaviour
     public LayerMask whatIsGround;
     public LayerMask whatIsLadder;
     private Animator anim;
+    public Animator cameraAnimator;
+
     public GameObject jumpEffect;
     public GameObject LandEffect;
 
@@ -40,6 +42,7 @@ public class PlayerControl : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        cameraAnimator = Camera.main.GetComponent<Animator>();
         extraJumps = extraJumpsValue;
     }
 
@@ -104,6 +107,7 @@ public class PlayerControl : MonoBehaviour
         if (isGrounded && !wasGrounded)
         {
             anim.SetTrigger("Landing");
+            cameraAnimator.SetTrigger("Shake");
             Instantiate(LandEffect, groundCheck.position, Quaternion.identity);
         }
 
