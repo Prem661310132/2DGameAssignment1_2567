@@ -56,7 +56,7 @@ public class PlayerControl : MonoBehaviour
         if (hitInfo.collider != null)
         {
             Debug.Log("Ladder Detected");
-            if (Input.GetKeyDown(KeyCode.UpArrow))
+            if (Input.GetKey(KeyCode.UpArrow))
             {
                 isClimbing = true;
                 Debug.Log("isClimbing = true");
@@ -71,7 +71,7 @@ public class PlayerControl : MonoBehaviour
         if (isClimbing == true)
         {
             InputVertical = Input.GetAxisRaw("Vertical");
-            rb.velocity = new Vector2(0, InputVertical * speed);
+            rb.velocity = new Vector2(InputHorizontal * speed, InputVertical * speed);
             rb.gravityScale = 0;
         }
         else
