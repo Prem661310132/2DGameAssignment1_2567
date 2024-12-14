@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.Tilemaps;
 using UnityEditor.Timeline;
 using UnityEngine;
@@ -10,25 +11,33 @@ public class PlayerControl : MonoBehaviour
     public float speed;
     public float jumpforce;
     public float distance;
+    
     private float InputHorizontal;
     private float InputVertical;
 
     private Rigidbody2D rb;
     private bool facingRight = true;
-    
+
     private bool isGrounded;
+    private bool wasGrounded;
     private bool isClimbing;
     public Transform groundCheck;
     public float checkRadius;
 
     public LayerMask whatIsGround;
     public LayerMask whatIsLadder;
+    private Animator anim;
 
     private int extraJumps;
     public int extraJumpsValue;
+
+    public float jumpTimeCounter;
+    private float jumptime;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         extraJumps = extraJumpsValue;
     }
 
@@ -37,15 +46,15 @@ public class PlayerControl : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
 
         InputHorizontal = Input.GetAxis("Horizontal");
-    
+
         rb.velocity = new Vector2(InputHorizontal * speed, rb.velocity.y);
 
 
-        if(facingRight == false && InputHorizontal > 0 )
+        if (facingRight == false && InputHorizontal > 0)
         {
             Flip();
         }
-        else if(facingRight == true && InputHorizontal < 0 )
+        else if (facingRight == true && InputHorizontal < 0)
         {
             Flip();
         }
@@ -76,15 +85,32 @@ public class PlayerControl : MonoBehaviour
         }
         else
         {
-            rb.gravityScale = 1;
+            rb.gravityScale = 1.5f;
         }
+    }
+    void Flip()
+    {
+        facingRight = !facingRight;
+        Vector3 Scaler = transform.localScale;
+        Scaler.x *= -1;
+        transform.localScale = Scaler;
+
     }
 
     private void Update()
     {
+        if (isGrounded && !wasGrounded)
+        {
+            anim.SetTrigger("Landing");
+        }
+
+        wasGrounded = isGrounded;
+
         if (isGrounded == true)
-        { 
+        {
             extraJumps = extraJumpsValue;
+            jumptime = jumpTimeCounter;
+           
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && extraJumps > 0)
@@ -93,20 +119,17 @@ public class PlayerControl : MonoBehaviour
             extraJumps--;
         }
         else if (Input.GetKeyDown(KeyCode.Space) && extraJumps == 0 && isGrounded == true)
-        
+
         {
             rb.velocity = Vector2.up * jumpforce;
         }
+
+
+        if (Input.GetKey(KeyCode.Space) && jumptime > 0)
+        {
+        rb.velocity = Vector2.up * jumpforce;
+        jumptime -= Time.deltaTime;
+        }
+
     }
-
-    void Flip()
-    {
-        facingRight = !facingRight;
-        Vector3 Scaler = transform.localScale;
-        Scaler.x *= -1;
-        transform.localScale = Scaler;
-    
-    }
-
-
 }
