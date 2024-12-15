@@ -1,0 +1,677 @@
+fileFormatVersion: 2
+guid: 8af2ddc78baac824da593741cb0bb5fb
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PlayerSpawn_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 403.2
+        width: 128
+        height: 100.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4342c34c22dec2418dfdae65f1b9f14
+      internalID: -822545698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSpawn_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 403.2
+        width: 128
+        height: 100.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83ddba9c3e9fa2141b8ef1a74b157668
+      internalID: -1520669246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSpawn_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 403.2
+        width: 128
+        height: 100.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ab3244c8616eba44a423172ae99eb36
+      internalID: 1672847965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSpawn_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 403.2
+        width: 128
+        height: 100.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 979b2c1e3962f1949bce4e1421abb5cd
+      internalID: -179025463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSpawn_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 403.2
+        width: 128
+        height: 100.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e6edab5df782f247b0bba9e96ccff21
+      internalID: 1806321043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSpawn_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 303.2
+        width: 128
+        height: 100.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbc5e36f4e2072a41ba5534ba16141f0
+      internalID: 615056447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSpawn_6
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 303.2
+        width: 128
+        height: 100.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb9faeb7c1e727b4da9315ad3371dad6
+      internalID: -480202299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSpawn_7
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 303.2
+        width: 128
+        height: 100.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42e72ee8e4c90a5489e47e82966237ab
+      internalID: -1689418325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSpawn_8
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 303.2
+        width: 128
+        height: 100.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ce45639f18a1f745bd2846e3a79db0d
+      internalID: 1600390285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSpawn_9
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 303.2
+        width: 128
+        height: 100.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cf946532abbf4049874f229d5af1c7e
+      internalID: -754819988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSpawn_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 203.2
+        width: 128
+        height: 100.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aebf03a68434404a891461accf7e642
+      internalID: -1715884670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSpawn_11
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 203.2
+        width: 128
+        height: 100.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38126a7bfa43a364e81676321fb8a10e
+      internalID: -174019873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSpawn_12
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 203.2
+        width: 128
+        height: 100.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3d47699130b95c40bfa33e2c9faee35
+      internalID: 1384012100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSpawn_13
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 203.2
+        width: 128
+        height: 100.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccf70b5e293588b42843144208733dc5
+      internalID: 1933875940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSpawn_14
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 203.2
+        width: 128
+        height: 100.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99e61419ed81a5849b90424db7c7992c
+      internalID: -1482060075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSpawn_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 103.2
+        width: 128
+        height: 100.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc15c5d5c49e1ec41815d26a3259ab1f
+      internalID: -1302326727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSpawn_16
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 103.2
+        width: 128
+        height: 100.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c4ca520f566a0e45bc5ac360898719b
+      internalID: 1773850249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSpawn_17
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 103.2
+        width: 128
+        height: 100.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f836a1cd0003584da21d8528f790e01
+      internalID: -380069377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSpawn_18
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 103.2
+        width: 128
+        height: 100.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b1eaff01a9d4844397cd40232907392
+      internalID: -1517149416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSpawn_19
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 103.2
+        width: 128
+        height: 100.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a089fc0708eef8344ad1cb184c8e6dce
+      internalID: -1438019742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSpawn_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3.199997
+        width: 128
+        height: 100.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d24bb879d5780b45bb3c28802b21719
+      internalID: -980532717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSpawn_21
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 3.199997
+        width: 128
+        height: 100.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a39f5eb251c9234d92cd1a96d0efb02
+      internalID: 1264163975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSpawn_22
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 3.199997
+        width: 128
+        height: 100.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9e5e1e537ce0244ebdf14e760e1b483
+      internalID: -106502080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSpawn_23
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 3.199997
+        width: 128
+        height: 100.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36e78f957e0f3e140b3dc9cda557bde5
+      internalID: -771308214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSpawn_24
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 3.199997
+        width: 128
+        height: 100.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27ddd83756a636840a05a6fcda71ab69
+      internalID: 128568266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      PlayerSpawn_0: -822545698
+      PlayerSpawn_1: -1520669246
+      PlayerSpawn_10: -1715884670
+      PlayerSpawn_11: -174019873
+      PlayerSpawn_12: 1384012100
+      PlayerSpawn_13: 1933875940
+      PlayerSpawn_14: -1482060075
+      PlayerSpawn_15: -1302326727
+      PlayerSpawn_16: 1773850249
+      PlayerSpawn_17: -380069377
+      PlayerSpawn_18: -1517149416
+      PlayerSpawn_19: -1438019742
+      PlayerSpawn_2: 1672847965
+      PlayerSpawn_20: -980532717
+      PlayerSpawn_21: 1264163975
+      PlayerSpawn_22: -106502080
+      PlayerSpawn_23: -771308214
+      PlayerSpawn_24: 128568266
+      PlayerSpawn_3: -179025463
+      PlayerSpawn_4: 1806321043
+      PlayerSpawn_5: 615056447
+      PlayerSpawn_6: -480202299
+      PlayerSpawn_7: -1689418325
+      PlayerSpawn_8: 1600390285
+      PlayerSpawn_9: -754819988
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

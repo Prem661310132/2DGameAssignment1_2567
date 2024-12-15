@@ -58,10 +58,12 @@ public class PlayerControl : MonoBehaviour
         if (facingRight == false && InputHorizontal > 0)
         {
             Flip();
+            Debug.Log("Flip Right");
         }
         else if (facingRight == true && InputHorizontal < 0)
         {
             Flip();
+          Debug.Log("Flip left");
         }
 
         RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.up, distance, whatIsLadder);
@@ -92,14 +94,6 @@ public class PlayerControl : MonoBehaviour
         {
             rb.gravityScale = 1.5f;
         }
-    }
-    void Flip()
-    {
-        facingRight = !facingRight;
-        Vector3 Scaler = transform.localScale;
-        Scaler.x *= -1;
-        transform.localScale = Scaler;
-
     }
 
     private void Update()
@@ -137,9 +131,20 @@ public class PlayerControl : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space) && jumptime > 0)
         {
+            Debug.Log("jump");
         rb.velocity = Vector2.up * jumpforce;
         jumptime -= Time.deltaTime;
         }
 
     }
+    void Flip()
+    {
+        facingRight = !facingRight;
+        Vector3 Scaler = transform.localScale;
+        Scaler.x *= -1;
+        transform.localScale = Scaler;
+
+        Debug.Log("Scaler.x: " + transform.localScale.x);
+    }
+
 }
