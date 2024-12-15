@@ -8,10 +8,13 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour
 
 {
+    [Header("PlayerValue")]
     public float speed;
     public float jumpforce;
     public float distance;
-    
+    public float checkRadius;
+    public Transform groundCheck;
+
     private float InputHorizontal;
     private float InputVertical;
 
@@ -22,8 +25,8 @@ public class PlayerControl : MonoBehaviour
     private bool wasGrounded;
     private bool isClimbing;
     private bool Running;
-    public Transform groundCheck;
-    public float checkRadius;
+
+    
 
     [Header("LayerMask")]
     public LayerMask whatIsGround;
@@ -133,6 +136,7 @@ public class PlayerControl : MonoBehaviour
         {
             rb.gravityScale = 1.5f;
         }
+
     }
 
     private void Update()
@@ -188,6 +192,17 @@ public class PlayerControl : MonoBehaviour
         transform.localScale = Scaler;
 
         Debug.Log("Scaler.x: " + transform.localScale.x);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == ("enemy"))
+        {
+            Debug.Log("Touch Enemy");
+            PlayerAnimator.SetTrigger("Hurt");
+            PlayerAnimator.SetBool("isDeath", true);
+        }
+
     }
 
 }
