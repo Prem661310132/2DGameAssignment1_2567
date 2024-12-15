@@ -84,6 +84,27 @@ public class PlayerControl : MonoBehaviour
           Debug.Log("Flip left");
         }
 
+        if (Input.GetKey(KeyCode.V))
+        {
+           PlayerAnimator.SetTrigger("Victory");
+        }
+
+        if (Input.GetKey(KeyCode.H))
+        {
+            PlayerAnimator.SetTrigger("Hurt");
+        }
+
+        if (Input.GetKey(KeyCode.J))
+        {
+            PlayerAnimator.SetBool("isDeath", true);
+        }
+
+        if (Input.GetKey(KeyCode.K))
+        {
+            PlayerAnimator.SetBool("isDeath", false);  
+        }
+
+
         RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.up, distance, whatIsLadder);
         Debug.DrawRay(transform.position, Vector2.up * distance, Color.red);
 
