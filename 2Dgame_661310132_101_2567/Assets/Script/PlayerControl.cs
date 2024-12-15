@@ -21,22 +21,29 @@ public class PlayerControl : MonoBehaviour
     private bool isGrounded;
     private bool wasGrounded;
     private bool isClimbing;
+    private bool Running;
     public Transform groundCheck;
     public float checkRadius;
 
+    [Header("LayerMask")]
     public LayerMask whatIsGround;
     public LayerMask whatIsLadder;
-    private Animator anim;
-    public Animator cameraAnimator;
 
+    [Header("Particle")]
     public GameObject jumpEffect;
     public GameObject LandEffect;
 
+    [Header("Jump")]
     private int extraJumps;
     public int extraJumpsValue;
-
     public float jumpTimeCounter;
     private float jumptime;
+
+    [Header("Player Animation")]
+    private Animator anim;
+    public Animator cameraAnimator;
+    public Animator PlayerAnimator;
+
 
     private void Start()
     {
@@ -54,6 +61,17 @@ public class PlayerControl : MonoBehaviour
 
         rb.velocity = new Vector2(InputHorizontal * speed, rb.velocity.y);
 
+        PlayerAnimator.SetFloat("velocityX", InputHorizontal * speed);
+        PlayerAnimator.SetBool("isRun", Running);
+
+        if (InputHorizontal < 0 || InputHorizontal > 0)
+        {
+            Running = true;
+        }
+        else
+        {
+            Running = false;
+        }
 
         if (facingRight == false && InputHorizontal > 0)
         {
@@ -98,9 +116,11 @@ public class PlayerControl : MonoBehaviour
 
     private void Update()
     {
+        PlayerAnimator.SetBool("Grounded",isGrounded);
+
         if (isGrounded && !wasGrounded)
         {
-            anim.SetTrigger("Landing");
+            //anim.SetTrigger("Landing");
             cameraAnimator.SetTrigger("Shake");
             Instantiate(LandEffect, groundCheck.position, Quaternion.identity);
         }
@@ -119,13 +139,15 @@ public class PlayerControl : MonoBehaviour
             rb.velocity = Vector2.up * jumpforce;
             extraJumps--;
             Instantiate(jumpEffect, groundCheck.position, Quaternion.identity);
-            anim.SetTrigger("Jumping");
+          //anim.SetTrigger("Jumping");
+
         }
         else if (Input.GetKeyDown(KeyCode.Space) && extraJumps == 0 && isGrounded == true)
 
         {
             rb.velocity = Vector2.up * jumpforce;
-            anim.SetTrigger("Jumping");
+          //anim.SetTrigger("Jumping");
+
         }
 
 
