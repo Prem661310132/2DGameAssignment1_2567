@@ -11,16 +11,9 @@ public class Intro : MonoBehaviour
     {
         StartCoroutine(Wait_for_intro());
     }
-
-   
-    void Update()
-    {
-        
-    }
-
     IEnumerator Wait_for_intro()
     { 
         yield return new WaitForSeconds(wait_time);
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("MainMenu");
     }
 }

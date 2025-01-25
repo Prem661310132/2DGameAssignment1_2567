@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,18 @@ public class Mainmenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadSceneAsync(2);
+        SceneManager.LoadSceneAsync("SampleScene");
     }
+
+    public void Credit()
+    {
+        SceneManager.LoadSceneAsync("Credit");
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
 
 }

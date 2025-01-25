@@ -18,6 +18,8 @@ public class PlayerControl : MonoBehaviour
     private float InputHorizontal;
     private float InputVertical;
 
+    AudioManager audioManager;
+
     private Rigidbody2D rb;
     private bool facingRight = true;
 
@@ -48,6 +50,10 @@ public class PlayerControl : MonoBehaviour
     public Animator PlayerAnimator;
 
 
+    private void Awake()
+    {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -87,22 +93,25 @@ public class PlayerControl : MonoBehaviour
           Debug.Log("Flip left");
         }
 
-        if (Input.GetKey(KeyCode.V))
+        if (Input.GetKeyDown(KeyCode.V))
         {
            PlayerAnimator.SetTrigger("Victory");
+           audioManager.PlaySFX(audioManager.playerattack);
         }
 
-        if (Input.GetKey(KeyCode.H))
+        if (Input.GetKeyDown(KeyCode.H))
         {
             PlayerAnimator.SetTrigger("Hurt");
+            audioManager.PlaySFX(audioManager.playerhurt);
         }
 
-        if (Input.GetKey(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.J))
         {
             PlayerAnimator.SetBool("isDeath", true);
+            audioManager.PlaySFX(audioManager.playerdie);
         }
 
-        if (Input.GetKey(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.K))
         {
             PlayerAnimator.SetBool("isDeath", false);  
         }
@@ -148,6 +157,7 @@ public class PlayerControl : MonoBehaviour
             //anim.SetTrigger("Landing");
             cameraAnimator.SetTrigger("Shake");
             Instantiate(LandEffect, groundCheck.position, Quaternion.identity);
+            audioManager.PlaySFX(audioManager.playerlanding);
         }
 
         wasGrounded = isGrounded;
@@ -164,7 +174,8 @@ public class PlayerControl : MonoBehaviour
             rb.velocity = Vector2.up * jumpforce;
             extraJumps--;
             Instantiate(jumpEffect, groundCheck.position, Quaternion.identity);
-          //anim.SetTrigger("Jumping");
+            audioManager.PlaySFX(audioManager.playerjump);
+            //anim.SetTrigger("Jumping");
 
         }
         else if (Input.GetKeyDown(KeyCode.Space) && extraJumps == 0 && isGrounded == true)
@@ -200,7 +211,8 @@ public class PlayerControl : MonoBehaviour
         {
             Debug.Log("Touch Enemy");
             PlayerAnimator.SetTrigger("Hurt");
-            PlayerAnimator.SetBool("isDeath", true);
+            audioManager.PlaySFX(audioManager.playerhurt);
+            //PlayerAnimator.SetBool("isDeath", true);
         }
 
     }
