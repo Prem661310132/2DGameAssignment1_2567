@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip gamebg;
     public AudioClip creditbg;
     public AudioClip winbg;
+    public AudioClip firework;
     public AudioClip gameoverbg;
     public AudioClip mainmenubg;
 
@@ -59,6 +60,8 @@ public class AudioManager : MonoBehaviour
                 break;
             case "Ending":
                 musicSource.clip = winbg;
+                SFXSource.clip = firework;
+                SFXSource.Play();
                 break;
             case "GameOver":
                 musicSource.clip = gameoverbg;

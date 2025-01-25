@@ -33,6 +33,7 @@ public class PlayerControl : MonoBehaviour
     [Header("LayerMask")]
     public LayerMask whatIsGround;
     public LayerMask whatIsLadder;
+    public LayerMask whatIsEnemy;
 
     [Header("Particle")]
     public GameObject jumpEffect;
@@ -48,6 +49,11 @@ public class PlayerControl : MonoBehaviour
     private Animator anim;
     public Animator cameraAnimator;
     public Animator PlayerAnimator;
+
+    [Header("Attribute")]
+    public Transform attackPoint;
+    public float attackRange = 3.5f;
+    public int attackDamage = 3;
 
 
     private void Awake()
@@ -95,7 +101,8 @@ public class PlayerControl : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.V))
         {
-           PlayerAnimator.SetTrigger("Victory");
+           Attack();
+           PlayerAnimator.SetTrigger("Victory");           
            audioManager.PlaySFX(audioManager.playerattack);
         }
 
@@ -217,4 +224,18 @@ public class PlayerControl : MonoBehaviour
 
     }
 
+    void Attack()
+    {
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, whatIsEnemy);
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            enemy.GetComponent<Enemies>().TakeDamage(attackDamage);
+        }
+
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawSphere(attackPoint.position, attackRange);
+    }
 }

@@ -51,6 +51,7 @@ MonoBehaviour:
   gamebg: {fileID: 8300000, guid: 03ff2e281b032475289b87ad86f4655d, type: 3}
   creditbg: {fileID: 8300000, guid: c8b5bc86788aea3428ac83355dfc3a53, type: 3}
   winbg: {fileID: 8300000, guid: 0a8a60fd496cf63408d5e954115529c4, type: 3}
+  firework: {fileID: 8300000, guid: b270371e34607324dbc058dd37f5e6a6, type: 3}
   gameoverbg: {fileID: 8300000, guid: 4142012ef86edf14ea64358a08c59d16, type: 3}
   mainmenubg: {fileID: 8300000, guid: 54b522eeb124c4b4ab14b269e7d768e1, type: 3}
   playerhurt: {fileID: 8300000, guid: dc6614beca09347ec9b258f12d154bdd, type: 3}
