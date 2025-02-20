@@ -1,20 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.Tilemaps;
-using UnityEditor.Timeline;
 using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 
 {
     [Header("PlayerValue")]
-    public float speed;
-    public float jumpforce;
     public float distance;
     public float checkRadius;
     public Transform groundCheck;
+    public int score = 0;
 
+    [Header("Attribute")]
+    public int playerLife = 3;
+    public float playerMaxHealth = 10;
+    public float playerCurrentHealth;
+    public float attackRange = 3.5f;
+    public int attackDamage = 3;
+    public float speed;
+
+    public Transform attackPoint;
     private float InputHorizontal;
     private float InputVertical;
 
@@ -40,6 +46,7 @@ public class PlayerControl : MonoBehaviour
     public GameObject LandEffect;
 
     [Header("Jump")]
+    public float jumpforce;
     private int extraJumps;
     public int extraJumpsValue;
     public float jumpTimeCounter;
@@ -50,10 +57,7 @@ public class PlayerControl : MonoBehaviour
     public Animator cameraAnimator;
     public Animator PlayerAnimator;
 
-    [Header("Attribute")]
-    public Transform attackPoint;
-    public float attackRange = 3.5f;
-    public int attackDamage = 3;
+
 
 
     private void Awake()
@@ -62,6 +66,8 @@ public class PlayerControl : MonoBehaviour
     }
     private void Start()
     {
+        playerCurrentHealth = playerMaxHealth;
+
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         cameraAnimator = Camera.main.GetComponent<Animator>();
@@ -110,6 +116,7 @@ public class PlayerControl : MonoBehaviour
         {
             PlayerAnimator.SetTrigger("Hurt");
             audioManager.PlaySFX(audioManager.playerhurt);
+            TakeDamage(5);
         }
 
         if (Input.GetKeyDown(KeyCode.J))
@@ -201,6 +208,12 @@ public class PlayerControl : MonoBehaviour
         jumptime -= Time.deltaTime;
         }
 
+        if (playerCurrentHealth <= 0)
+        {
+            PlayerAnimator.SetBool("isDeath", true);
+            audioManager.PlaySFX(audioManager.playerdie);
+        }
+
     }
     void Flip()
     {
@@ -214,15 +227,36 @@ public class PlayerControl : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == ("enemy"))
+        if (collision.gameObject.CompareTag("enemy")) // ตรวจสอบว่าชนกับศัตรู
         {
             Debug.Log("Touch Enemy");
             PlayerAnimator.SetTrigger("Hurt");
             audioManager.PlaySFX(audioManager.playerhurt);
-            //PlayerAnimator.SetBool("isDeath", true);
-        }
 
+            // เข้าถึงสคริปต์ของศัตรูเพื่อดึงข้อมูลประเภท
+            var enemy = collision.GetComponent<Enemies>();
+            if (enemy != null)
+            {
+                switch (enemy.enemyType)
+                {
+                    case Enemies.EnemyType.Slime:
+                        Debug.Log("Touched Slime!");
+                        TakeDamage(1);
+                        break;
+                    case Enemies.EnemyType.Golem:
+                        Debug.Log("Touched Golem!");
+                        break;
+                    case Enemies.EnemyType.Skull:
+                        Debug.Log("Touched Skull!");
+                        break;
+                    default:
+                        Debug.Log("Unknown enemy type.");
+                        break;
+                }
+            }
+        }
     }
+
 
     void Attack()
     {
@@ -237,5 +271,12 @@ public class PlayerControl : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawSphere(attackPoint.position, attackRange);
+    }
+
+
+    public void TakeDamage(int damage)
+    {
+        playerCurrentHealth -= damage;
+        playerCurrentHealth = Mathf.Clamp(playerCurrentHealth, 0, 10);
     }
 }
